@@ -30,13 +30,17 @@ function getId(id,value){
     document.getElementById(id).innerText=value;
 }
 
+function getInnerTxt(ids){
+const getInnerTxt=document.getElementById(ids).innerText;
+return parseInt(getInnerTxt);
+}
 
 // Total cost function 
 function totalCost(){
-    const chocolate=document.getElementById('chocolate').innerText;
-    const cheese=document.getElementById('cheese').innerText;
-    const sprite=document.getElementById('sprite').innerText;
+    const chocolate=getInnerTxt('chocolate');
+    const cheese=getInnerTxt('cheese');
+    const sprite=getInnerTxt('sprite');
 
     const result=parseInt(chocolate) + parseInt(cheese) + parseInt(sprite);
-    document.getElementById('total').innerText=result;
+    getId('total',result);
 }
